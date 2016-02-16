@@ -8,11 +8,14 @@
 
 import UIKit
 import ObjectMapper
+import Alamofire
+import AlamofireObjectMapper
 
 class MasterViewController: UITableViewController {
 
     var detailViewController: DetailViewController? = nil
-    var objects = [AnyObject]()
+    var objects = [Fontaine]()
+    
 
 
     override func viewDidLoad() {
@@ -20,6 +23,22 @@ class MasterViewController: UITableViewController {
         // Do any additional setup after loading the view, typically from a nib.
         self.navigationItem.leftBarButtonItem = self.editButtonItem()
 
+        let URL = "http://api.eaupen.net/closest?accept=application/json&lat=48.831034&lon=2.355265&limit=50&range=1500"
+        Alamofire.request(.GET, URL).responseArray { (response: Response<[Fontaine], NSError>) in
+            
+            let fontaines = response.result.value
+            
+            if  let fontaines = fontaines {
+                for fontaine in fontaines {
+                    self.objects.insert(fontaine, atIndex: 0)
+                    let indexPath = NSIndexPath(forRow: 0, inSection: 0)
+                    self.tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+                }
+            }
+        }
+
+        
+        
         let addButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "insertNewObject:")
         self.navigationItem.rightBarButtonItem = addButton
         if let split = self.splitViewController {
@@ -39,13 +58,13 @@ class MasterViewController: UITableViewController {
     }
 
     func insertNewObject(sender: AnyObject) {
-        let content = NSDate().description
-        let object = Model(content: content)
-        let JSONString = Mapper().toJSONString(object)
+        //let content = NSDate().description
+        //let object = Model(content: content)
+        //let JSONString = Mapper().toJSONString(object)
         
-        objects.insert(JSONString!, atIndex: 0)
-        let indexPath = NSIndexPath(forRow: 0, inSection: 0)
-        self.tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+        //objects.insert(JSONString!, atIndex: 0)
+        //let indexPath = NSIndexPath(forRow: 0, inSection: 0)
+        //self.tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
     }
 
     // MARK: - Segues
@@ -75,9 +94,8 @@ class MasterViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
         
-        let JSON = objects[indexPath.row] as? String
-        let object = Mapper<Model>().map(JSON)
-        cell.textLabel!.text = object?.content
+        let fontaine = objects[indexPath.row]
+        cell.textLabel!.text = fontaine.adress?.adress
         return cell
     }
 

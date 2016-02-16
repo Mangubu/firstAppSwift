@@ -15,6 +15,9 @@
 		7D3C3EA01C71C88A006A5EFD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D3C3E9F1C71C88A006A5EFD /* Assets.xcassets */; };
 		7D3C3EA31C71C88A006A5EFD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D3C3EA11C71C88A006A5EFD /* LaunchScreen.storyboard */; };
 		7D5A602D1C720DD200BB68B5 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5A602C1C720DD200BB68B5 /* Model.swift */; };
+		7DC9138B1C7218EE009A36DE /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC9138A1C7218EE009A36DE /* Address.swift */; };
+		7DC9138D1C7219B0009A36DE /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC9138C1C7219B0009A36DE /* Location.swift */; };
+		7DC9138F1C721A23009A36DE /* Fontaine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC9138E1C721A23009A36DE /* Fontaine.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +31,9 @@
 		7D3C3EA21C71C88A006A5EFD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7D3C3EA41C71C88A006A5EFD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7D5A602C1C720DD200BB68B5 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		7DC9138A1C7218EE009A36DE /* Address.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
+		7DC9138C1C7219B0009A36DE /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		7DC9138E1C721A23009A36DE /* Fontaine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fontaine.swift; sourceTree = "<group>"; };
 		B698FE4B0BB1C7E31ADA3549 /* Pods-FirstApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirstApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-FirstApp/Pods-FirstApp.release.xcconfig"; sourceTree = "<group>"; };
 		EF0AB5DA37F72F4F68D0CAB1 /* Pods-FirstApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirstApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FirstApp/Pods-FirstApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -77,6 +83,9 @@
 				7D3C3E981C71C88A006A5EFD /* MasterViewController.swift */,
 				7D3C3E9A1C71C88A006A5EFD /* DetailViewController.swift */,
 				7D5A602C1C720DD200BB68B5 /* Model.swift */,
+				7DC9138A1C7218EE009A36DE /* Address.swift */,
+				7DC9138C1C7219B0009A36DE /* Location.swift */,
+				7DC9138E1C721A23009A36DE /* Fontaine.swift */,
 				7D3C3E9C1C71C88A006A5EFD /* Main.storyboard */,
 				7D3C3E9F1C71C88A006A5EFD /* Assets.xcassets */,
 				7D3C3EA11C71C88A006A5EFD /* LaunchScreen.storyboard */,
@@ -218,8 +227,11 @@
 			files = (
 				7D3C3E9B1C71C88A006A5EFD /* DetailViewController.swift in Sources */,
 				7D3C3E991C71C88A006A5EFD /* MasterViewController.swift in Sources */,
+				7DC9138F1C721A23009A36DE /* Fontaine.swift in Sources */,
 				7D3C3E971C71C88A006A5EFD /* AppDelegate.swift in Sources */,
 				7D5A602D1C720DD200BB68B5 /* Model.swift in Sources */,
+				7DC9138D1C7219B0009A36DE /* Location.swift in Sources */,
+				7DC9138B1C7218EE009A36DE /* Address.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
